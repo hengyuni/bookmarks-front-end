@@ -114,11 +114,43 @@ function App() {
             value={formData.url}
             onChange={handleChange}
             placeholder={"https://"}
-          ></input>
+          ></input>{" "}
         </label>
+        <br />
+        <label>
+          Tags: {" "}
+          <input
+            type="text"
+            id="url"
+            value={formData.tags}
+            onChange={handleChange}
+            placeholder={"enter tags..."}
+          ></input>{" "}
+        </label>
+        <br />
+        <input type="submit"></input>
       </form>
+
+      {bookmarks.map((bookmark) => {
+        return (
+          <div key={bookmark._id}>
+            <h3>{bookmark.title}</h3>
+            <p>
+              {" "}
+              You've bookmark'd {bookmark.title} with the tags: {" "} 
+              {bookmark.tags.length > 0 ? `${bookmark.tags}${" "}` : "no tags inputed yet"}
+            </p>
+            <button 
+              onClick={(e) => {
+                deleteBookmark(e, bookmark._id);
+              }}
+            >{`DELETE ${bookmark.title.toUpperCase()}`}</button>
+          </div>
+        );
+      })}
     </div>
   );
 }
 
 export default App;
+
