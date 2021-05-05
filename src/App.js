@@ -9,7 +9,7 @@ function App() {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
 
-
+// read
   const getAllBookmarks = async () => {
     try {
       const result = await fetch('http://localhost:8000/bookmarks');
@@ -19,7 +19,7 @@ function App() {
       console.log(err);
     }
   }
-
+// create
   const createBookmark = async () => {
     const body = {
       title,
@@ -42,10 +42,10 @@ function App() {
     }
 
   }
-
+// delete
   const deleteBookmark = async (id) => {
     try {
-      const response = await fetch(`http://localhost:8000/bookmarks/${id}`, {
+      const res = await fetch(`http://localhost:8000/bookmarks/${id}`, {
         method: "DELETE"
       })
     } catch (err) {
@@ -54,7 +54,7 @@ function App() {
       await getAllBookmarks();
     }
   }
-
+// update
   const updatedBookmark = async (data, id) => {
     try {
       const response = await fetch(`http://localhost:8000/bookmarks/${id}`, {
