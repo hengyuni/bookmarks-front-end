@@ -89,21 +89,47 @@ function Main() {
   }, []);
 
   return (
-    <DataContext.Provider value={{
-      deleteBookmark,
-      updatedBookmark
-    }}>
-      <h1>My Bookmarks App</h1>
-      <h3>you're logged in</h3>
-      <br />
-      <form onSubmit={onSubmit}>
-        <input type="text" id="title" placeholder="title" onChange={onTitleChange} value={title} />
-        <input type="text" id="url" placeholder="url" onChange={onURLChange} value={url} />
-        <input type="submit" />
-      </form>
-      <BookmarksList data={bookmarks} />
-    </DataContext.Provider>
+    <div>
+      <DataContext.Provider value={{
+        deleteBookmark,
+        updatedBookmark
+      }}>
+        <h1>My Bookmarks App</h1>
+        <h3>you're logged in</h3>
+        <br />
+        <form 
+          onSubmit={onSubmit}
+          style={{
+            marginTop: "-10px",
+            marginLeft: "30px",
+            marginRight: "30px",
+            border: "1px dashed #b3aa04",
+            borderRadius: "0%",
+            padding: "30px",
+            boxShadow: "8px 8px 16px rgba(0,0,0, 0.1)"
+          }}
+        >
+          <input 
+            type="text" 
+            id="title" 
+            placeholder="title" 
+            onChange={onTitleChange} 
+            value={title} />
+          <br />
+          <input 
+            type="text" 
+            id="url" 
+            placeholder="url" 
+            onChange={onURLChange} 
+            value={url} />
+          <br />
+          <input type="submit" />
+        </form>
+        <BookmarksList data={bookmarks} />
+      </DataContext.Provider>
+    </div>
   );
 }
+
 
 export default Main;

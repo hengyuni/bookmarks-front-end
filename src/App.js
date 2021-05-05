@@ -30,6 +30,7 @@ export default function App() {
       console.error(error)
     }
   };
+
   const handleLogout = () => {
     console.log("hello")
     window.localStorage.clear();
@@ -75,25 +76,38 @@ export default function App() {
           <center>
             <h1>Log In to See your bookmarks</h1>
           </center>
-          <form onSubmit={handleLogin}>
+          <form 
+            onSubmit={handleLogin}
+            style={{
+              marginTop: "-10px",
+              marginLeft: "30px",
+              marginRight: "30px",
+              border: "1px dashed #b3aa04",
+              borderRadius: "0%",
+              padding: "16px",
+              boxShadow: "8px 8px 16px rgba(0,0,0, 0.1)"
+            }}
+          >
             <label>
-              {" "}
-              Username:{" "}
+              {/* {" "}
+              Username:{" "} */}
               <input
                 type="text"
                 id="username"
+                placeholder="username"
                 value={loginForm.username}
                 onChange={handleLoginChange}
               />
             </label>
               <br />
-              <br />
+              {/* <br /> */}
               <label>
-                {" "}
-                Password:{" "}
+                {/* {" "}
+                Password:{" "} */}
                 <input
                   type="password"
                   id="password"
+                  placeholder="password"
                   value={loginForm.password}
                   onChange={handleLoginChange}
                 />

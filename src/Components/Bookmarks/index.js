@@ -21,6 +21,8 @@ export default function Bookmark({ data }) {
                 <h3>{data.title}</h3>
             </a>
             <button onClick={(e) => deleteBookmark(data._id)}>Delete</button>
+            <br />
+            <br />
             <div>
                 <form onSubmit={onFormSubmit}>
                     <input type="text" id="title" placeholder="title" onChange={onTheTitleChange} value={theTitle} />
