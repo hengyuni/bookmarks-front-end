@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { DataContext } from '../../App';
+import { DataContext } from '../Main/Main';
 
 export default function Bookmark({ data }) {
     const { deleteBookmark, updatedBookmark } = useContext(DataContext);
