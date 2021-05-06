@@ -114,14 +114,16 @@ function Main() {
             id="title" 
             placeholder="title" 
             onChange={onTitleChange} 
-            value={title} />
+            value={title} 
+          />
           <br />
           <input 
             type="text" 
             id="url" 
             placeholder="url" 
             onChange={onURLChange} 
-            value={url} />
+            value={url} 
+          />
           <br />
           <input type="submit" />
         </form>
