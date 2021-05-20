@@ -17,9 +17,7 @@ export default function Bookmark({ data }) {
 
     return (
         <div>
-            <a href={data.url} target="_blank">
-                <h3>{data.title}</h3>
-            </a>
+            <a href={data.url} target="_blank"><h3>{data.title}</h3></a>
             <button onClick={(e) => deleteBookmark(data._id)}>Delete</button>
             <br />
             <br />
